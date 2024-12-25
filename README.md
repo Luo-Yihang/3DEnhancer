@@ -24,9 +24,7 @@
         <span style="font-variant: small-caps;"><strong>3DEnhancer</strong></span> employs a multi-view 
         diffusion model to enhance multi-view images, thus improving 3D models.
     </p>
-    <video width="820" height="410" autoplay loop muted>
-        <source src="assets/teaser.mp4" type="video/mp4">
-    </video>
+    <img width="820" alt="pipeline" src="assets/teaser.gif">
     :open_book: For more visual results, go checkout our <a href="https://yihangluo.com/projects/3DEnhancer" target="_blank">project page</a>
 </div>
 
@@ -36,14 +34,14 @@
 <summary><b>Introducing 3DEnhancer</b></summary>
     <br>
     <div align="center">
-        <img width="720" alt="pipeline" src="assets/method_overview.png">
-        <p style="text-align: justify;">
+        <img width="820" alt="pipeline" src="assets/method_overview.png">
+        <p align="justify">
             Despite advances in neural rendering, due to the scarcity of high-quality 3D datasets 
             and the inherent limitations of multi-view diffusion models, view synthesis and 3D model 
             generation are restricted to low resolutions with suboptimal multi-view consistency. 
             In this study, we present a novel 3D enhancement pipeline, dubbed <span style="font-variant: small-caps;"><strong>3DEnhancer</strong></span>, which employs 
             a multi-view latent diffusion model to enhance coarse 3D inputs while preserving multi-view consistency. 
-            Our method includes a <strong>pose-aware encoder</strong> and a <strong>diffusion-based</strong> denoiser to refine low-quality 
+            Our method includes a <strong>pose-aware encoder</strong> and a <strong>diffusion-based denoiser</strong> to refine low-quality 
             multi-view images, along with <strong>data augmentation</strong> and a <strong>multi-view attention module with epipolar 
             aggregation</strong> to maintain consistent, high-quality 3D outputs across views. Unlike existing video-based 
             approaches, our model supports seamless multi-view enhancement with improved coherence across diverse 
@@ -78,3 +76,6 @@ If you find our code or paper helps, please consider citing:
     year={2024},
 }
 ```
+
+## :mailbox: Contact
+If you have any questions, please feel free to reach us at `luo_yihang@outlook.com`. 
