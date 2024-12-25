@@ -68,6 +68,10 @@
 
 If you find our code or paper helps, please consider citing:
 
+## :page_with_curl: License
+
+This project is licensed under <a rel="license" href="./LICENSE">NTU S-Lab License 1.0</a>. Redistribution and use should follow this license.
+
 ```bibtex
 @article{luo20243denhancer,
     title={3DEnhancer: Consistent Multi-View Diffusion for 3D Enhancement}, 
