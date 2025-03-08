@@ -15,6 +15,9 @@
         <a href="https://youtu.be/N7bfyd7B4D8" target='_blank'>
         <img src="https://img.shields.io/badge/Demo%20Video-%23FF0000.svg?logo=YouTube&logoColor=white">
         </a>
+        <a href="https://huggingface.co/spaces/yslan/3DEnhancer" target='_blank'>
+            <img src="https://img.shields.io/badge/Demo-%F0%9F%A4%97%20Hugging%20Face-blue">
+        </a>
         <img src="https://api.infinitescript.com/badgen/count?name=sczhou/3DEnhancer&ltext=Visitors&color=3977dd">
     </h4>
 </div>
@@ -54,14 +57,88 @@
 
 ## :fire: News
 
+- [2024/03/08] Our inference code and [Gradio demo](https://huggingface.co/spaces/yslan/3DEnhancer) are released.
 - [2024/12/25] Our paper and project page are now live. Merry Christmas!
 
 
-### :calendar: TODO
+## 🔧 Installation
+
+1. Clone Repo
+    ```bash
+    git clone https://github.com/Luo-Yihang/3DEnhancer
+    cd 3DEnhancer
+    ```
+
+2. Create Conda Environment 
+    ```bash
+    conda create -n 3denhancer python=3.9 -y
+    conda activate 3denhancer
+    ```
+3. Install Python Dependencies
+
+    **Important:** Install [Torch](https://pytorch.org/get-started/locally/) and [Xformers](https://github.com/facebookresearch/xformers) based on your CUDA version. For example, for *Torch 2.1.0 + CUDA 11.8*:
+
+    ```
+    # Install Torch and Xformers
+    pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu118
+    pip install -U xformers --index-url https://download.pytorch.org/whl/cu118
+
+    # Install other dependencies
+    pip install -r requirements.txt
+    ```
+
+## :fire: Pretrained Weights
+
+Download the pretrained model from [Hugging Face](https://huggingface.co/Luo-Yihang/3DEnhancer) and place it under `pretrained_models/3DEnhancer`:
+
+```bash
+mkdir -p pretrained_models/3DEnhancer
+wget -P pretrained_models/3DEnhancer https://huggingface.co/Luo-Yihang/3DEnhancer/resolve/main/model.safetensors
+```
+
+## :computer: Inference
+The code has been tested on *NVIDIA A100 and V100 GPUs*. An NVIDIA GPU with *at least 18GB of memory* is required.
+
+We provide example inputs in `assets/examples/mv_lq`, where each subfolder contains four sequential multi-view images. Run the following command to test with a aligned `prompt` and `noise_level`:
+
+```bash
+python inference.py \
+    --input_folder assets/examples/mv_lq/vase \
+    --output_folder results/vase \
+    --prompt "vase" \
+    --noise_level 0
+```
+
+For more options, refer to [`inference.py`](./inference.py).
+
+## :zap: Demo
+The script [`app.py`](app.py) provides a simple web demo for generating and enhancing multi-view images, as well as reconstructing 3D models using [LGM](https://github.com/3DTopia/LGM).
+
+Install a *modified Gaussian splatting* (with depth and alpha rendering) required for LGM:
+```bash
+git clone --recursive https://github.com/ashawkey/diff-gaussian-rasterization
+pip install ./diff-gaussian-rasterization
+```
+
+Download the LGM pretrained weights from [Hugging Face](https://huggingface.co/ashawkey/LGM) and place it under `pretrained_models/LGM`:
+```bash
+mkdir -p pretrained_models/LGM
+wget -P pretrained_models/LGM https://huggingface.co/ashawkey/LGM/resolve/main/model_fp16_fixrot.safetensors
+```
+
+After installing the dependencies, start the demo with:
+
+```sh
+python app.py
+```
+
+***The web demo is also available on [Hugging Face Spaces](https://huggingface.co/spaces/yslan/3DEnhancer)! 🎉***
+
+## :calendar: TODO
 
 - [x] Release paper and project page.
-- [ ] Release code (coming soon!).
-- [ ] Release Gradio demo.
+- [x] Release inference code.
+- [x] Release Gradio demo.
 
 ## :page_with_curl: License
 
