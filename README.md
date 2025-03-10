@@ -65,7 +65,7 @@
 
 1. Clone Repo
     ```bash
-    git clone https://github.com/Luo-Yihang/3DEnhancer
+    git clone --recurse-submodules https://github.com/Luo-Yihang/3DEnhancer
     cd 3DEnhancer
     ```
 
