@@ -71,7 +71,7 @@
 
 2. Create Conda Environment 
     ```bash
-    conda create -n 3denhancer python=3.9 -y
+    conda create -n 3denhancer python=3.10 -y
     conda activate 3denhancer
     ```
 3. Install Python Dependencies
@@ -87,7 +87,7 @@
     pip install -r requirements.txt
     ```
 
-## :fire: Pretrained Weights
+## :floppy_disk: Pretrained Weights
 
 Download the pretrained model from [Hugging Face](https://huggingface.co/Luo-Yihang/3DEnhancer) and place it under `pretrained_models/3DEnhancer`:
 
@@ -99,7 +99,7 @@ wget -P pretrained_models/3DEnhancer https://huggingface.co/Luo-Yihang/3DEnhance
 ## :computer: Inference
 The code has been tested on *NVIDIA A100 and V100 GPUs*. An NVIDIA GPU with *at least 18GB of memory* is required.
 
-We provide example inputs in `assets/examples/mv_lq`, where each subfolder contains four sequential multi-view images. Run the following command to test with a aligned `prompt` and `noise_level`:
+We provide example inputs in `assets/examples/mv_lq`, where each subfolder contains four sequential multi-view images. Perform inference on multi-view images using an aligned `prompt` and `noise_level`. For example:
 
 ```bash
 python inference.py \

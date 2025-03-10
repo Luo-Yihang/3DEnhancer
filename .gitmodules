@@ -1,0 +1,3 @@
+[submodule "extern/LGM"]
+	path = extern/LGM
+	url = https://github.com/3DTopia/LGM.git
