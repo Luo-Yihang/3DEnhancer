@@ -8,7 +8,7 @@ tensorboard
 tensorboardX
 transformers
 sentencepiece~=0.1.99
-protobuf==3.20.2
+protobuf==4.25.8
 yapf==0.40.1
 peft==0.6.2
 ftfy
