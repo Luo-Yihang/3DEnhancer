@@ -2,6 +2,17 @@
     <h1>
     3DEnhancer: Consistent Multi-View Diffusion for 3D Enhancement
     </h1>
+
+<div>
+    <a href='https://yihangluo.com/' target='_blank'>Yihang Luo</a>&emsp;
+    <a href='https://shangchenzhou.com/' target='_blank'>Shangchen Zhou</a>&emsp;
+    <a href="https://nirvanalan.github.io/" target='_blank'>Yushi Lan</a>&emsp;
+    <a href="https://xingangpan.github.io/" target='_blank'>Xingang Pan</a>&emsp;
+    <a href="https://www.mmlab-ntu.com/person/ccloy/" target='_blank'>Chen Change Loy</a>&emsp;
+</div>
+<div>
+    S-Lab, Nanyang Technological University&emsp;
+</div>
 </div>
 
 <div>
@@ -149,11 +160,11 @@ This project is licensed under <a rel="license" href="./LICENSE">NTU S-Lab Licen
 If you find our code or paper helps, please consider citing:
 
 ```bibtex
-@article{luo20243denhancer,
+@inproceedings{luo20243denhancer,
     title={3DEnhancer: Consistent Multi-View Diffusion for 3D Enhancement}, 
     author={Yihang Luo and Shangchen Zhou and Yushi Lan and Xingang Pan and Chen Change Loy},
-    booktitle={arXiv preprint arXiv:2412.18565}
-    year={2024},
+    booktitle={CVPR}
+    year={2025},
 }
 ```
 
